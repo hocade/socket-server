@@ -21,5 +21,6 @@ class WebSocketConfig : WebSocketMessageBrokerConfigurer {
     override fun registerStompEndpoints(registry: StompEndpointRegistry) {
         registry.addEndpoint("/hocade-websocket")
             .setAllowedOriginPatterns("*")
+            .setHandshakeHandler(StompHandshakeHandler())
     }
 }

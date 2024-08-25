@@ -30,6 +30,8 @@ val queryDslVersion = "5.0.0:jakarta"
 val mapstructVersion = "1.5.5.Final"
 
 dependencies {
+    implementation("org.jetbrains.kotlinx:kotlinx-coroutines-core:1.7.1")
+    implementation("org.jetbrains.kotlinx:kotlinx-coroutines-reactor:1.7.1")
     implementation("org.springframework.boot:spring-boot-starter-data-jpa")
     implementation("org.springframework.boot:spring-boot-starter-validation")
     implementation("org.springframework.boot:spring-boot-starter-web")
@@ -38,9 +40,12 @@ dependencies {
     implementation("org.springframework.boot:spring-boot-starter-security")
     implementation("com.googlecode.libphonenumber:libphonenumber:8.12.6")
     implementation("org.jetbrains.kotlin:kotlin-reflect")
+    implementation("org.springframework.boot:spring-boot-starter-data-redis")
     implementation("com.querydsl:querydsl-jpa:${queryDslVersion}")
     implementation("org.mapstruct:mapstruct:${mapstructVersion}")
     implementation("org.mapstruct:mapstruct-processor:${mapstructVersion}")
+
+//    implementation("org.springframework.kafka:spring-kafka")
 
     annotationProcessor("org.springframework.boot:spring-boot-configuration-processor")
     runtimeOnly("io.jsonwebtoken:jjwt-impl:0.11.5")

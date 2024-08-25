@@ -1,13 +1,23 @@
 server:
   port: 9100
 
-
+kafka:
+  host: localhost:9092
 spring:
   datasource:
     driver-class-name: com.mysql.cj.jdbc.Driver
     url: jdbc:mysql://localhost:3306/test?serverTimezone=UTC&characterEncoding=UTF-8&useSSL=false&allowPublicKeyRetrieval=true
     username: root
     password: 1234
+  redis:
+    port: 6379
+    host: localhost
+  security:
+    oauth2:
+      resource-server:
+        jwt:
+          issuer-uri: http://localhost:9000
+          jwk-set-uri: http://localhost:9000/oauth2/jwks
 
 logging:
   level:
